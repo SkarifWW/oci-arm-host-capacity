@@ -64,7 +64,7 @@ $notifier = (function (): \Hitrov\Interfaces\NotifierInterface {
     return new \Hitrov\Notification\Telegram();
 })();
 
-$shape = getenv('OCI_SHAPE');
+$shape = getenv('OCI_SHAPE') ?: 'VM.Standard.A1.Flex';
 
 $maxRunningInstancesOfThatShape = 1;
 if (getenv('OCI_MAX_INSTANCES') !== false) {
